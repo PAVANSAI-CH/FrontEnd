@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="signin.css" />
+  </head>
+  <body>
+    <div class="background-glass"></div>
+    <div class="container">
+      <div class="header">
+        <h2>R E G I S T E R</h2>
+      </div>
+      <div class="social-buttons">
+        <button class="design">
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              viewBox="0 0 64 64"
+              height="32px"
+              width="32px"
+            >
+              <g fill="none">
+                <g transform="translate(3, 2)">
+                  <path
+                    fill="#4285F4"
+                    d="M57.81,30.15c0-2.43-0.2-4.2-0.62-6.03H29.5v10.95h16.25c-0.33,2.72-2.1,6.82-6.03,9.57l-0.06,0.37l8.76,6.78l0.61,0.06C54.6,46.7,57.81,39.13,57.81,30.15z"
+                  ></path>
+                  <path
+                    fill="#34A853"
+                    d="M29.5,58.99c7.96,0,14.65-2.62,19.53-7.14L39.72,44.64c-2.49,1.74-5.84,2.95-10.22,2.95c-7.8,0-14.4-5.14-16.78-12.25l-0.35,0.03L3.27,42.41l-0.12,0.33C7.99,52.37,17.96,58.99,29.5,58.99z"
+                  ></path>
+                  <path
+                    fill="#FBBC05"
+                    d="M12.72,35.33c-0.62-1.84-0.99-3.81-0.99-5.83c0-2.02,0.37-3.98,0.95-5.83l-0.02-0.39L3.45,16.11l-0.3,0.14C1.5,20.08,0.5,24.52,0.5,29.5s1,9.42,2.65,13.25L12.72,35.33z"
+                  ></path>
+                  <path
+                    fill="#EA4335"
+                    d="M29.5,11.52c5.56,0,9.29,2.4,11.42,4.41l8.32-8.05C43.92,3.77,37.46,0,29.5,0C17.96,0,7.99,6.62,3.77,16.25l9.24,7.6c2.41-7.12,9.01-12.33,16.49-12.33z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <span class="google-text">Sign in with Google</span>
+          </a>
+        </button>
+      </div>
+
+      <div class="or-divider">
+        <p>O R</p>
+      </div>
+
+      <div class="form-container">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Name" required />
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email" required />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" required />
+          <label for="terms">
+            I agree to the <a class="terms-link" href="#">Terms</a> and
+            <a class="terms-link" href="#">Privacy Policy</a>
+          </label>
+        </div>
+
+        <button class="signup-button" onclick="register()">SIGN UP</button>
+
+        <div class="footer">
+          <p>
+            Already have an account?
+            <a href="login.html">Sign in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function register() {
+        // Retrieve the name and email from input fields
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        // Store the user's name in localStorage
+        localStorage.setItem("userName", name);
+
+        // Redirect to the dashboard
+        window.location.href = "dashboard.html";
+      }
+    </script>
+  </body>
+</html>
