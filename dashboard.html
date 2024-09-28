@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="header">
+        <h1>Hello, <span id="userName"></span>!</h1>
+        <div class="button-group">
+          <a href="addmembers.html" class="button">Add Member</a>
+          <a href="login.html" class="button">Logout</a>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Employee rows will be added here dynamically -->
+        </tbody>
+      </table>
+    </div>
+    <script>
+      // Retrieve the user's name from localStorage
+      const userName = localStorage.getItem("userName");
+      document.getElementById("userName").textContent = userName
+        ? userName
+        : "User"; // Display name or fallback
+
+      const userName2 = localStorage.getItem("userName");
+      document.getElementById("userName").textContent = userName2
+        ? userName2.toUpperCase()
+        : "USER"; // Display name in uppercase
+    </script>
+  </body>
+</html>
