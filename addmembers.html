@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Members</title>
+    <link rel="stylesheet" href="addmembers.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Add Members</h2>
+      <div class="form__group field">
+        <input
+          type="input"
+          class="form__field"
+          placeholder="Name"
+          required=""
+        />
+        <label for="name" class="form__label">Name</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="email"
+          class="form__field"
+          placeholder="Email"
+          required=""
+        />
+        <label for="email" class="form__label">Email</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="password"
+          class="form__field"
+          placeholder="Password"
+          required=""
+        />
+        <label for="password" class="form__label">Password</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="password"
+          class="form__field"
+          placeholder="Confirm Password"
+          required=""
+        />
+        <label for="confirm-password" class="form__label"
+          >Confirm Password</label
+        >
+      </div>
+      <h3>Gender</h3>
+      <div class="radio-button-container">
+        <div class="radio-button">
+          <input
+            type="radio"
+            class="radio-button__input"
+            id="male"
+            name="gender"
+            required
+          />
+          <label class="radio-button__label" for="male">
+            <span class="radio-button__custom"></span>
+            Male
+          </label>
+        </div>
+        <div class="radio-button">
+          <input
+            type="radio"
+            class="radio-button__input"
+            id="female"
+            name="gender"
+            required
+          />
+          <label class="radio-button__label" for="female">
+            <span class="radio-button__custom"></span>
+            Female
+          </label>
+        </div>
+      </div>
+      <button type="submit">A D D</button>
+    </div>
+  </body>
+</html>
