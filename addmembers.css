@@ -1,0 +1,230 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('./charlesdeluvio-Lks7vei-eAg-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background: rgba(255, 255, 255);
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2:after {
+    content: "";
+    display: block;
+    width: 80px;
+    /* Width of the line */
+    height: 2px;
+    /* Height of the line */
+    background: #38caef;
+    /* Line color */
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: left;
+    /* Align heading to the left */
+    margin-top: 20px;
+    /* Add some margin to the top if needed */
+}
+
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: black;
+    font-weight: 600;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-top: 15px;
+    /* Adjusted gap between the label and input field */
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 10px;
+    /* Increase the gap from the top */
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    font-weight: 400;
+    color: #9b9b9b;
+    pointer-events: none;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 5px;
+    /* Keep it consistent with the default */
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #38caef;
+    font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+.radio-button-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 10px;
+    /* Add some margin to the top */
+    justify-content: flex-start;
+    /* Align radio buttons to the left */
+}
+
+.radio-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.radio-button__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-button__label {
+    display: inline-block;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 15px;
+    color: #999;
+    /* Initial gray color */
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.radio-button__custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    transition: all 0.3s ease;
+}
+
+.radio-button__input:checked+.radio-button__label .radio-button__custom {
+    background-color: #38caef;
+    border-color: transparent;
+    transform: scale(0.8);
+    box-shadow: 0 0 20px #38caef80;
+}
+
+.radio-button__input:checked+.radio-button__label {
+    color: #38caef;
+}
+
+.radio-button__label:hover .radio-button__custom {
+    transform: scale(1.2);
+    border-color: #38caef;
+    box-shadow: 0 0 20px #38caef80;
+}
+
+/* Updated button styles */
+button {
+    width: 10em;
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #38caef;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    /* Change button text color */
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    /* Space above the button */
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #ffffff;
+    transition: 0.5s;
+    transform-origin: center;
+}
+
+button::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+
+button:hover::before,
+button:hover::after {
+    transform: scale(0);
+}
+
+button:hover {
+    box-shadow: inset 0px 0px 25px #38caef;
+}
