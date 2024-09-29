@@ -3,61 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Members</title>
+    <title>Add Employee</title>
     <link rel="stylesheet" href="addmembers.css" />
   </head>
   <body>
     <div class="container">
-      <h2>Add Members</h2>
+      <h2>Add Employee</h2>
+
+      <!-- Personal Details -->
+      <h3>Personal Details</h3>
       <div class="form__group field">
         <input
-          type="input"
+          type="text"
           class="form__field"
-          placeholder="Name"
-          required=""
+          placeholder="Full Name"
+          required
         />
-        <label for="name" class="form__label">Name</label>
+        <label for="fullName" class="form__label">Full Name</label>
+      </div>
+      <div class="form__group field">
+        <input type="date" class="form__field" required />
+        <label for="dateOfBirth" class="form__label">Date of Birth</label>
       </div>
       <div class="form__group field">
         <input
-          type="email"
+          type="number"
           class="form__field"
-          placeholder="Email"
-          required=""
+          placeholder="Age"
+          required
+          min="1"
+          max="999"
         />
-        <label for="email" class="form__label">Email</label>
+        <label for="age" class="form__label">Age</label>
       </div>
-      <div class="form__group field">
-        <input
-          type="password"
-          class="form__field"
-          placeholder="Password"
-          required=""
-        />
-        <label for="password" class="form__label">Password</label>
-      </div>
-      <div class="form__group field">
-        <input
-          type="password"
-          class="form__field"
-          placeholder="Confirm Password"
-          required=""
-        />
-        <label for="confirm-password" class="form__label"
-          >Confirm Password</label
-        >
-      </div>
+
       <h3>Gender</h3>
       <div class="radio-button-container">
         <div class="radio-button">
           <input
             type="radio"
-            class="radio-button__input"
             id="male"
             name="gender"
+            class="radio-button__input"
             required
           />
-          <label class="radio-button__label" for="male">
+          <label for="male" class="radio-button__label">
             <span class="radio-button__custom"></span>
             Male
           </label>
@@ -65,18 +55,199 @@
         <div class="radio-button">
           <input
             type="radio"
-            class="radio-button__input"
             id="female"
             name="gender"
+            class="radio-button__input"
             required
           />
-          <label class="radio-button__label" for="female">
+          <label for="female" class="radio-button__label">
             <span class="radio-button__custom"></span>
             Female
           </label>
         </div>
       </div>
-      <button type="submit">A D D</button>
+
+      <!-- Current Address -->
+      <h3>Current Address</h3>
+      <div class="form__group field">
+        <input type="text" class="form__field" placeholder="City" required />
+        <label for="currentCity" class="form__label">City</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Address Line 1"
+          required
+        />
+        <label for="currentAddressLine1" class="form__label"
+          >Address Line 1</label
+        >
+      </div>
+      <div class="form__group field">
+        <input type="text" class="form__field" placeholder="Address Line 2" />
+        <label for="currentAddressLine2" class="form__label"
+          >Address Line 2</label
+        >
+      </div>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Pin Code"
+          pattern="\d{6}"
+          required
+        />
+        <label for="currentPinCode" class="form__label">Pin Code</label>
+      </div>
+
+      <!-- Permanent Address -->
+      <h3>Permanent Address</h3>
+      <div class="form__group field">
+        <input type="text" class="form__field" placeholder="City" required />
+        <label for="permanentCity" class="form__label">City</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Address Line 1"
+          required
+        />
+        <label for="permanentAddressLine1" class="form__label"
+          >Address Line 1</label
+        >
+      </div>
+      <div class="form__group field">
+        <input type="text" class="form__field" placeholder="Address Line 2" />
+        <label for="permanentAddressLine2" class="form__label"
+          >Address Line 2</label
+        >
+      </div>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Pin Code"
+          pattern="\d{6}"
+          required
+        />
+        <label for="permanentPinCode" class="form__label">Pin Code</label>
+      </div>
+
+      <div class="form__group field">
+        <input
+          type="tel"
+          class="form__field"
+          placeholder="Mobile"
+          pattern="\d{10}"
+          required
+        />
+        <label for="mobile" class="form__label">Mobile</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="email"
+          class="form__field"
+          placeholder="Personal Email"
+          required
+        />
+        <label for="personalEmail" class="form__label">Personal Email</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Emergency Contact Name"
+          required
+        />
+        <label for="emergencyContactName" class="form__label"
+          >Emergency Contact Name</label
+        >
+      </div>
+      <div class="form__group field">
+        <input
+          type="tel"
+          class="form__field"
+          placeholder="Emergency Contact Mobile"
+          pattern="\d{10}"
+          required
+        />
+        <label for="emergencyContactMobile" class="form__label"
+          >Emergency Contact Mobile</label
+        >
+      </div>
+
+      <!-- Professional Details -->
+      <h3>Professional Details</h3>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Employment Code"
+          pattern="\d{6}"
+          required
+        />
+        <label for="employmentCode" class="form__label">Employment Code</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="email"
+          class="form__field"
+          placeholder="Company Email"
+          required
+        />
+        <label for="companyEmail" class="form__label">Company Email</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="tel"
+          class="form__field"
+          placeholder="Office Phone"
+          pattern="\d{8,12}"
+          required
+        />
+        <label for="officePhone" class="form__label">Office Phone</label>
+      </div>
+
+      <!-- Finance Section -->
+      <h3>Finance</h3>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="PAN Card"
+          required
+        />
+        <label for="panCard" class="form__label">PAN Card</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Aadhaar Card"
+          required
+        />
+        <label for="aadhaarCard" class="form__label">Aadhaar Card</label>
+      </div>
+      <div class="form__group field">
+        <textarea
+          class="form__field"
+          placeholder="Bank Details"
+          required
+        ></textarea>
+        <label for="bankDetails" class="form__label">Bank Details</label>
+      </div>
+      <div class="form__group field">
+        <textarea
+          class="form__field"
+          placeholder="CTC Breakup"
+          required
+        ></textarea>
+        <label for="ctcBreakup" class="form__label">CTC Breakup</label>
+      </div>
+
+      <button type="submit">Add Employee</button>
     </div>
   </body>
 </html>
