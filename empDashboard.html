@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="empDashboard.css" />
+    <style>
+      .content {
+        display: none; /* Hide all sections by default */
+      }
+      .show {
+        display: block; /* Show the selected section */
+      }
+      .middle {
+        display: flex; /* Use flexbox for layout */
+        /* Full width */
+        padding-top: 400px;
+        padding-left: 400px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <h2>Employee Details</h2>
+
+      <div class="design">
+        <button class="value" id="personalBtn">
+          <svg
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            data-name="Layer 2"
+          >
+            <path
+              fill="#7D8590"
+              d="m1.5 13v1a.5.5 0 0 0 .3379.4731 18.9718 18.9718 0 0 0 6.1621 1.0269 18.9629 18.9629 0 0 0 6.1621-1.0269.5.5 0 0 0 .3379-.4731v-1a6.5083 6.5083 0 0 0 -4.461-6.1676 3.5 3.5 0 1 0 -4.078 0 6.5083 6.5083 0 0 0 -4.461 6.1676zm4-9a2.5 2.5 0 1 1 2.5 2.5 2.5026 2.5026 0 0 1 -2.5-2.5zm2.5 3.5a5.5066 5.5066 0 0 1 5.5 5.5v.6392a18.08 18.08 0 0 1 -11 0v-.6392a5.5066 5.5066 0 0 1 5.5-5.5z"
+            ></path>
+          </svg>
+          P E R S O N A L
+        </button>
+        <button class="value" id="professionalBtn">
+          <svg id="Line" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#7D8590"
+              id="XMLID_1646_"
+              d="M20 4h-16a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4v2h8v-2h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM8 20v-2h8v2H8zm12-4H4V6h16v10zM8 8h8v2H8V8z"
+            ></path>
+          </svg>
+          P R O F E S S I O N A L
+        </button>
+        <button class="value" id="financeBtn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="#7D8590"
+          >
+            <text
+              x="50%"
+              y="35%"
+              dominant-baseline="middle"
+              text-anchor="middle"
+              font-size="24"
+              fill="#7D8590"
+            >
+              $
+            </text>
+          </svg>
+          F I N A N C E
+        </button>
+      </div>
+    </div>
+
+    <div class="positionBack">
+      <a href="login.html">
+        <button class="back">
+          <svg
+            height="16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"
+            ></path>
+          </svg>
+          <span>B A C K</span>
+        </button>
+      </a>
+    </div>
+
+    <div class="content" id="personal">
+      <h2>Personal Details</h2>
+      <section>
+        <label>
+          Full Name:
+          <input class="input" type="text" name="fullName" />
+        </label>
+        <label>
+          Date of Birth:
+          <input class="input" type="date" name="dob" />
+        </label>
+        <label>
+          Age:
+          <input class="input" type="number" name="age" />
+        </label>
+        <label>
+          Gender:
+          <select class="input" name="gender">
+            <option value="male" selected>Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+      </section>
+      <section>
+        <h2>Current Address</h2>
+        <label>
+          City:
+          <input class="input" type="text" name="currentCity" />
+        </label>
+        <label>
+          Address Line 1:
+          <input class="input" type="text" name="currentAddress1" />
+        </label>
+        <label>
+          Address Line 2:
+          <input class="input" type="text" name="currentAddress2" />
+        </label>
+        <label>
+          Pincode:
+          <input class="input" type="text" name="currentPincode" />
+        </label>
+      </section>
+      <section>
+        <h2>Permanent Address</h2>
+        <label>
+          City:
+          <input class="input" type="text" name="permanentCity" />
+        </label>
+        <label>
+          Address Line 1:
+          <input class="input" type="text" name="permanentAddress1" />
+        </label>
+        <label>
+          Address Line 2:
+          <input class="input" type="text" name="permanentAddress2" />
+        </label>
+        <label>
+          Pincode:
+          <input class="input" type="text" name="permanentPincode" />
+        </label>
+        <label>
+          Personal Email:
+          <input class="input" type="email" name="personalEmail" />
+        </label>
+        <label>
+          Emergency Contact Name:
+          <input class="input" type="text" name="emergencyContactName" />
+        </label>
+        <label>
+          Emergency Contact Number:
+          <input class="input" type="text" name="emergencyContactNumber" />
+        </label>
+      </section>
+    </div>
+
+    <div class="content" id="professional">
+      <h2>Professional Details</h2>
+      <section>
+        <label>
+          Employee Code:
+          <input class="input" type="text" name="employeeCode" />
+        </label>
+        <label>
+          Company Email:
+          <input class="input" type="email" name="companyEmail" />
+        </label>
+        <label>
+          Office Phone:
+          <input class="input" type="text" name="officePhone" />
+        </label>
+      </section>
+    </div>
+
+    <div class="content" id="finance">
+      <h2>Finance Details</h2>
+      <section>
+        <label>
+          PAN Card:
+          <input class="input" type="text" name="panCard" />
+        </label>
+        <label>
+          Aadhar Card:
+          <input class="input" type="text" name="aadharCard" />
+        </label>
+        <label>
+          Bank Details:
+          <input class="input" type="text" name="bankDetails" />
+        </label>
+        <label>
+          CTC Breakup:
+          <input class="input" type="text" name="ctcBreakup" />
+        </label>
+      </section>
+
+      <section>
+        <button class="button" type="button">
+          <span class="button__text">Download</span>
+          <span class="button__icon"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 35 35"
+              id="bdd05811-e15d-428c-bb53-8661459f9307"
+              data-name="Layer 2"
+              class="svg"
+            >
+              <path
+                d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"
+              ></path>
+              <path
+                d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"
+              ></path>
+              <path
+                d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"
+              ></path></svg
+          ></span>
+        </button>
+      </section>
+    </div>
+
+    <script>
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll(".content");
+        sections.forEach((section) => {
+          section.classList.remove("show");
+        });
+        document.getElementById(sectionId).classList.add("show");
+      }
+
+      document
+        .getElementById("personalBtn")
+        .addEventListener("click", () => showSection("personal"));
+      document
+        .getElementById("professionalBtn")
+        .addEventListener("click", () => showSection("professional"));
+      document
+        .getElementById("financeBtn")
+        .addEventListener("click", () => showSection("finance"));
+    </script>
+  </body>
+</html>
