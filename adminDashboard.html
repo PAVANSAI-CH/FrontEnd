@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management System</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Play:wght@400;700&display=swap");
+
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("BACKADMIN.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 20px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* Disable scrollbars */
+        box-sizing: border-box; /* Include padding in width/height */
+      }
+
+      h2 {
+        color: #cd5c08;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        margin: 0;
+        color: steelblue;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        letter-spacing: 0.1pc;
+      }
+      .All-Buttons {
+        display: flex;
+        gap: 30px;
+      }
+      .top-right-buttons {
+        font-size: 18px;
+        color: gray;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        letter-spacing: 0.1pc;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: color;
+      }
+
+      .top-right-buttons:focus,
+      .top-right-buttons:hover {
+        color: #000;
+      }
+
+      .top-right-buttons:focus:after,
+      .top-right-buttons:hover:after {
+        width: 100%;
+        left: 0%;
+      }
+
+      .top-right-buttons:after {
+        content: "";
+        pointer-events: none;
+        bottom: -2px;
+        left: 50%;
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: #000;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: width, left;
+      }
+      .logout {
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        letter-spacing: 0.1pc;
+        font-weight: 600;
+      }
+
+      .logout {
+        --primary-color: gray;
+        --hovered-color: #c84747;
+        position: relative;
+        display: flex;
+        font-weight: 600;
+        font-size: 20px;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      .logout p {
+        margin: 0;
+        position: relative;
+        font-size: 20px;
+        color: var(--primary-color);
+      }
+
+      .logout::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        left: 0;
+        bottom: -7px;
+        background: var(--hovered-color);
+        height: 2px;
+        transition: 0.3s ease-out;
+      }
+
+      .logout p::before {
+        position: absolute;
+        content: "LOGOUT";
+        width: 0%;
+        inset: 0;
+        color: var(--hovered-color);
+        overflow: hidden;
+        transition: 0.3s ease-out;
+      }
+
+      .logout:hover::after {
+        width: 100%;
+      }
+
+      .logout:hover p::before {
+        width: 100%;
+      }
+
+      .company-info {
+        font-size: 28px;
+        color: #6a9c89;
+        margin-bottom: 40px;
+        font-family: "Oxygen", sans-serif;
+        background-color: #f7f7f7; /* Light background for the box */
+        padding: 20px;
+        border-left: 6px solid #cd5c08;
+        width: 500px; /* Fixed width for the box */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+      }
+
+      a {
+        text-decoration: none; /* Remove underline from all anchor tags */
+      }
+
+      .img {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        max-width: 150px;
+        max-height: 150px;
+      }
+
+      .img img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Admin Name and Buttons -->
+    <div class="header">
+      <h1>ADMIN NAME: <span id="userName"></span></h1>
+      <div class="All-Buttons">
+        <button class="top-right-buttons">Profile</button>
+        <a href="dashboard.html"
+          ><button class="top-right-buttons">Employee Details</button></a
+        >
+        <a href="addmembers.html"
+          ><button class="top-right-buttons">ADD Employee</button></a
+        >
+        <a href="login.html"
+          ><button class="logout"><p>LOGOUT</p></button></a
+        >
+      </div>
+    </div>
+
+    <!-- Company Info Section styled as a box -->
+    <!-- <div class="company-info">
+      <p>
+        Welcome to our Employee Management System. Our company, founded with a
+        passion for innovation, is dedicated to delivering top-tier solutions
+        across industries. We strive to foster a collaborative work environment
+        where employees are empowered to reach their full potential. With a
+        focus on growth and excellence, we are committed to being leaders in our
+        field while nurturing a culture of inclusion and respect.
+      </p>
+    </div> -->
+
+    <!-- <div class="img">
+      <img src="./boss.png" alt="Image Not Found" />
+    </div> -->
+
+    <script>
+      // Retrieve the user's name from localStorage
+      const userName = localStorage.getItem("userName");
+      document.getElementById("userName").textContent = userName
+        ? userName.toUpperCase()
+        : "USER"; // Display name in uppercase or fallback
+    </script>
+  </body>
+</html>
